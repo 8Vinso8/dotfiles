@@ -14,5 +14,7 @@ alias yaysyu='yay -Syu'
 
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
+colorscript random
+
 starship init fish | source
 
