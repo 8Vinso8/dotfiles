@@ -12,6 +12,9 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
+alias suspend="sudo systemctl suspend"
+alias hibernate="sudo systemctl hibernate"
+
 function __history_previous_command
   switch (commandline -t)
   case "!"
