@@ -15,6 +15,8 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias suspend="sudo systemctl suspend"
 alias hibernate="sudo systemctl hibernate"
 
+alias syncDocs="/usr/bin/rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/vinso/Документы" "google-drive:Конспекты""
+
 function __history_previous_command
   switch (commandline -t)
   case "!"
