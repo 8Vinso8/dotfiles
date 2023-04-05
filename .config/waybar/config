@@ -1,0 +1,65 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "margin": "5 10 5 10",
+    "fixed-center": true,
+    "spacing": 0,
+    "modules-left": ["wlr/workspaces", "hyprland/window"],
+    "modules-center": ["mpris"],
+    "modules-right": ["tray", "memory", "cpu", "wireplumber", "hyprland/language", "clock"],
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-ru": "RU"
+    },
+    "mpris": {
+	    "format": "{player_icon} {artist}-{title}",
+	    "format-paused": "{status_icon} {artist}-{title}",
+	    "player-icons": {
+		    "default": "",
+	    },
+	    "status-icons": {
+		    "paused": ""
+	    },
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+    "cpu": {
+        "format": " {usage}%"
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "pavucontrol",
+        "on-click-right": "helvum",
+        "format-icons": ["", "", ""]
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 /home/vinso/.config/waybar/modules/mediaplayer.py --player spotify",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+}
+
