@@ -1,0 +1,78 @@
+* {
+    font-family: "Ubuntu Nerd Font";
+    transition: none;
+    box-shadow: none;
+  }
+  
+  window#waybar {
+    background-color: rgba(43, 48, 59, 1);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    font-size: 16px;
+  }
+  
+  button {
+    border: none;
+    border-radius: 0;
+  }
+  
+  button:hover {
+    background: inherit;
+  }
+  
+  #workspaces button {
+    padding: 0 5px;
+  }
+  
+  #workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  #workspaces button.active {
+    background-color: #64727D;
+  }
+  
+  #workspaces button:first-child {
+  }
+  
+  #clock,
+  #battery,
+  #cpu,
+  #memory,
+  #disk,
+  #temperature,
+  #backlight,
+  #network,
+  #pulseaudio,
+  #wireplumber,
+  #custom-media,
+  #tray,
+  #mode,
+  #idle_inhibitor,
+  #scratchpad,
+  #power-profiles-daemon,
+  #language,
+  #mpd {
+    padding: 0 5px;
+    color: #ffffff;
+  }
+  
+  #window,
+  #workspaces {
+    margin: 0 4px;
+  }
+  
+  /* If workspaces is the leftmost module, omit left margin */
+  .modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+  }
+  
+  /* If workspaces is the rightmost module, omit right margin */
+  .modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+  }
+  
+  #tray menu {
+    font-size: 14px;
+  }
