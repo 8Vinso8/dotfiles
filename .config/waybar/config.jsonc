@@ -1,0 +1,64 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "margin": 0,
+    "modules-left": [
+        "hyprland/workspaces",
+        "cpu",
+        "memory"
+    ],
+    "modules-center": [
+        "mpris"
+    ],
+    "modules-right": [
+        "tray",
+        "idle_inhibitor",
+        "pulseaudio",
+        "hyprland/language",
+        "clock"
+    ],
+    "mpris": {
+        "player": "spotify",
+        "format": "{status_icon} {title} - {artist}",
+        "status-icons": {
+            "playing": "",
+            "paused": "",
+            "stopped": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "<span foreground='#f38ba8'></span>",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%d.%m.%y | %H:%M}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{used}GiB",
+        "tooltip-format": "{swapUsed}GiB"
+    },
+    "pulseaudio": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "<span foreground='#f38ba8'></span>",
+        "on-scroll-up": "",
+        "on-scroll-down": "",
+        "tooltip": false
+    },
+    "hyprland/language": {
+        "format-en": "EN",
+        "format-ru": "RU"
+    }
+}
