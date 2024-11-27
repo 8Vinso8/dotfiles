@@ -1,5 +1,5 @@
 [global]
-    font = "Monospace 16"
+    font = "Monospace 12"
     width = (200, 400)
     height = 400
     notification_limit = 5
@@ -9,10 +9,10 @@
     separator_height = 0
     frame_width = 0
     sort = update
-    corner_radius = 20
+    corner_radius = 10
     icon_position = left
     min_icon_size = 32
-    max_icon_size = 80
+    max_icon_size = 70
     icon_corner_radius = 10
     timeout = 2s
     background = "#222222"
