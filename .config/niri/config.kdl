@@ -1,0 +1,196 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            // alt and super are swapped
+            options "grp:caps_toggle, altwin:swap_lalt_lwin"
+        }
+        repeat-delay 350
+        repeat-rate 25
+        track-layout "window"
+    }
+    touchpad {
+        off
+    }
+    mouse {
+        accel-profile "flat"
+    }
+    disable-power-key-handling
+    workspace-auto-back-and-forth
+    mod-key "Super"
+}
+
+output "DP-1" {
+    mode "2560x1440@164.999"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+    variable-refresh-rate on-demand=true
+    background-color "#000000"
+}
+
+layout {
+    gaps 15
+    center-focused-column "never"
+    always-center-single-column
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }
+    focus-ring {
+        off
+    }
+    border {
+        off
+    }
+    struts {
+         left -15
+         right -15
+         top -15
+         bottom -15
+    }
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+prefer-no-csd
+screenshot-path null
+
+environment {
+    DISPLAY ":0"
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+workspace "main"
+workspace "media"
+workspace "game"
+
+spawn-at-startup "app2unit" "--" "xwayland-satellite"
+spawn-at-startup "app2unit" "--" "spotify"
+spawn-at-startup "app2unit" "--" "discord"
+spawn-at-startup "app2unit" "--" "steam"
+spawn-at-startup "app2unit" "--" "zen-browser"
+
+window-rule {
+    match app-id="^zen$" title="^Картинка в картинке$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^zen$" at-startup=true
+    open-maximized true
+    open-focused false
+    open-on-workspace "main"
+}
+
+window-rule {
+    match app-id="^steam_app_.+$"
+    exclude title="^$"
+    open-on-workspace "game"
+    open-fullscreen true
+    variable-refresh-rate true
+}
+
+window-rule {
+    match app-id="^steam$" title="^Steam$"
+    open-maximized true
+    open-focused false
+    open-on-workspace "game"
+}
+
+window-rule {
+    match app-id="^Spotify$"
+    match app-id="^discord$"
+    open-maximized true
+    open-focused false
+    open-on-workspace "media"
+}
+
+binds {
+    Mod+T { spawn "app2unit" "--" "kitty"; }
+    Mod+D { spawn "fuzzel"; }
+
+    XF86AudioRaiseVolume { spawn "playerctl" "--player" "spotify" "volume" ".05+"; }
+    XF86AudioLowerVolume { spawn "playerctl" "--player" "spotify" "volume" ".05-"; }
+    XF86AudioNext { spawn "playerctl" "--player" "spotify" "next"; }
+    XF86AudioPrev { spawn "playerctl" "--player" "spotify" "previous"; }
+    XF86AudioPlay { spawn "playerctl" "--player" "spotify" "play-pause"; }
+    XF86AudioMute { spawn "/home/vinso/.config/scripts/mic.fish"; }
+
+    XF86MonBrightnessUp repeat=false { spawn "/home/vinso/.config/scripts/ddcutil.fish" "+" "10"; }
+    XF86MonBrightnessDown repeat=false { spawn "/home/vinso/.config/scripts/ddcutil.fish" "-" "10"; }
+
+    Mod+Tab repeat=false { toggle-overview; }
+
+    Mod+Q { close-window; }
+
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+
+    Mod+Shift+Ctrl+Left  { move-column-left; }
+    Mod+Shift+Ctrl+Right { move-column-right; }
+
+    Mod+Shift+Left  { consume-or-expel-window-left; }
+    Mod+Shift+Right { consume-or-expel-window-right; }
+    Mod+Shift+Up { move-window-up; }
+    Mod+Shift+Down { move-window-down; }
+
+    Mod+Shift+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+Shift+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Shift+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Shift+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+WheelScrollUp { focus-column-right; }
+    Mod+WheelScrollDown { focus-column-left; }
+    Mod+Ctrl+WheelScrollUp { move-column-right; }
+    Mod+Ctrl+WheelScrollDown { move-column-left; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Ctrl+F { expand-column-to-available-width; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    Mod+W { toggle-column-tabbed-display; }
+
+    Print { screenshot; }
+
+    Mod+Shift+E { quit; }
+
+    Mod+Shift+P { power-off-monitors; }
+}
