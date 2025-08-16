@@ -1,0 +1,60 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "bottom",
+  "spacing": 4,
+  "modules-left": [
+    "niri/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/dualsensectl",
+    "pulseaudio",
+    "niri/language",
+    "tray"
+  ],
+  "tray": {
+    "spacing": 5
+  },
+  "clock": {
+    "format": "{:%H:%M   %d.%m.%Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "pulseaudio": {
+    "format": "{format_source}",
+    "format-source": "UNM",
+    "format-source-muted": "<span color='red'>MUT</span>"
+  },
+  "niri/language": {
+    "format-en": "EN",
+    "format-ru": "RU"
+  },
+  "custom/dualsensectl": {
+    "exec": "dualsensectl battery 2>/dev/null | grep -Eo '[0-9]+' || true",
+    "interval": 10,
+    "on-click-right": "dualsensectl power-off",
+    "hide-empty-text": true
+  }
+}
