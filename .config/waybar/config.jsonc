@@ -19,7 +19,8 @@
     "spacing": 5
   },
   "clock": {
-    "format": "{:%H:%M   %d.%m.%Y}",
+    "format": "{:L%H:%M  %a %d.%m.%Y}",
+    "locale": "ru_RU.UTF-8",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",

@@ -94,10 +94,17 @@ window-rule {
 
 window-rule {
     match app-id="^steam_app_.+$"
+    // Anticheat window
     exclude title="^$"
     open-on-workspace "game"
     open-fullscreen true
     variable-refresh-rate true
+}
+
+// Helldivers 2 anti-cheat window
+window-rule {
+    match app-id="^steam_app_.+$" title="^$"
+    open-on-workspace "game"
 }
 
 window-rule {
