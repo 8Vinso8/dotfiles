@@ -10,7 +10,6 @@
     "clock"
   ],
   "modules-right": [
-    "custom/dualsensectl",
     "pulseaudio",
     "niri/language",
     "tray"
@@ -51,11 +50,5 @@
   "niri/language": {
     "format-en": "EN",
     "format-ru": "RU"
-  },
-  "custom/dualsensectl": {
-    "exec": "dualsensectl battery 2>/dev/null | grep -Eo '[0-9]+' || true",
-    "interval": 10,
-    "on-click-right": "dualsensectl power-off",
-    "hide-empty-text": true
   }
 }

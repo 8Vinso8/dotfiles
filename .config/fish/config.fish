@@ -20,4 +20,5 @@ if status is-interactive
     set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
     set -gx FZF_ALT_C_COMMAND "fd --type d --exclude .git --hidden"
     fzf --fish | source
+    zoxide init fish | source
 end
