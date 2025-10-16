@@ -1,0 +1,36 @@
+configuration {
+  modes: [ drun ];
+  drun-display-format: "{name}";
+}
+
+@theme "dmenu"
+
+* {
+  font: "Roboto Mono 14";
+  border-color: rgb(203, 166, 247);
+}
+
+window {
+  width: 40%;
+  y-offset: 10;
+  border: 2;
+  border-radius: 10;
+}
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  placeholder: " ... ";
+  padding: 0 0 0 5;
+}
+
+element {
+ padding: 0 5;
+}
+
+element selected {
+  background-color: transparent;
+  text-color: rgb(243, 139, 168);
+}
