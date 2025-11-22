@@ -62,7 +62,7 @@ debug {
 }
 
 environment {
-    QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
 workspace "browser"
@@ -106,7 +106,6 @@ spawn-sh-at-startup "sleep 5; ~/.config/scripts/ddcci-brightness $(cat ~/.config
 
 spawn-at-startup "zen-browser"
 spawn-at-startup "discord"
-spawn-at-startup "spotify-launcher"
 spawn-at-startup "steam"
 
 hotkey-overlay {
