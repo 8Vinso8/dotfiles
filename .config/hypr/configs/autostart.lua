@@ -1,6 +1,6 @@
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  hl.exec_cmd('sleep 3; ddcutil setvcp 10 "$(cat /home/vinso/.config/last_brightness)"')
+  hl.exec_cmd('sleep 3; ddcutil setvcp 10 "$(cat "$HOME/.config/last_brightness")"')
   hl.exec_cmd("waybar")
   hl.exec_cmd("zen-browser")
   hl.exec_cmd("fooyin")
