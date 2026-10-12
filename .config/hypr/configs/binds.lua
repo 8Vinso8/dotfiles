@@ -24,12 +24,12 @@ hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("~/.config/scripts/stream-lau
 -- pkill previous instance to change brightness value once
 hl.bind(
   "XF86MonBrightnessUp",
-  hl.dsp.exec_cmd("pkill ddc-brightness; ~/.config/scripts/ddc-brightness.sh up"),
+  hl.dsp.exec_cmd("~/.config/scripts/ddc-brightness.sh up"),
   { repeating = true }
 )
 hl.bind(
   "XF86MonBrightnessDown",
-  hl.dsp.exec_cmd("pkill ddc-brightness; ~/.config/scripts/ddc-brightness.sh down"),
+  hl.dsp.exec_cmd("~/.config/scripts/ddc-brightness.sh down"),
   { repeating = true }
 )
 
