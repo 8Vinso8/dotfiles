@@ -6,15 +6,19 @@ configuration {
 @theme "dmenu"
 
 * {
-  font: "JetBrains Mono 14";
+  font: "JetBrains Mono 13";
+  background-color: rgb(30, 30, 46);
+  text-color: rgb(205, 214, 244);
   border-color: rgb(203, 166, 247);
 }
 
 window {
   width: 40%;
-  y-offset: 10;
-  border: 2;
-  border-radius: 10;
+  y-offset: 10px;
+  border: 2px;
+  border-radius: 10px;
+  padding: 6px;
+  background-color: rgb(30, 30, 46);
 }
 
 prompt {
@@ -22,16 +26,28 @@ prompt {
 }
 
 entry {
-  placeholder: " ... ";
-  padding: 0 0 0 5;
+  placeholder: "Search...";
+  padding: 7px 10px;
+  background-color: rgb(24, 24, 37);
+  border-radius: 6px;
+  cursor-color: rgb(203, 166, 247);
+}
+
+listview {
+  spacing: 4px;
 }
 
 element {
- padding: 0 5;
+  padding: 6px 9px;
+  border-radius: 6px;
 }
 
 element selected {
   background-color: rgb(49, 50, 68);
-  text-color: rgb(243, 139, 168);
-  border-radius: 5;
+  text-color: rgb(203, 166, 247);
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
 }

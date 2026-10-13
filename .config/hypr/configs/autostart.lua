@@ -1,6 +1,8 @@
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("~/.config/scripts/ddc-brightness.sh restore")
+  hl.exec_cmd("wl-paste --type text --watch cliphist store")
+  hl.exec_cmd("wl-paste --type image --watch cliphist store")
   hl.exec_cmd("waybar")
   hl.exec_cmd("zen-browser")
   hl.exec_cmd("fooyin")

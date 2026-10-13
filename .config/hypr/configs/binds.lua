@@ -5,6 +5,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.config/scripts/rofi/powermenu.sh"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("rofi -modi emoji -show emoji -emoji-format '{emoji}'"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme '.config/rofi/clipboard.rasi' -no-custom -p Clipboard -display-columns 2 | cliphist decode | wl-copy"))
 
 -- music controls
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl -p fooyin next"), { ignore_mods = true })
@@ -74,7 +75,7 @@ end
 
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
 
 hl.bind(mainMod .. " + F", layout_bind({
