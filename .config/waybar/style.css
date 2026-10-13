@@ -1,3 +1,7 @@
+@define-color base #11111b;
+@define-color text #f5f5f5;
+@define-color mauve #cba6f7;
+@define-color surface #313244;
 @define-color red #f38ba8;
 
 * {
@@ -10,8 +14,8 @@
 }
 
 window#waybar {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: @base;
+  color: @text;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -25,35 +29,34 @@ button {
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: #ffffff;
+  color: @text;
 }
 
 #workspaces button.empty {
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 #workspaces button.active {
-  color: @red;
+  color: @mauve;
   opacity: 1;
 }
 #workspaces button:hover {
-  background-color: #101010;
+  background-color: @surface;
   opacity: 1;
 }
 
-#idle_inhibitor,
 #language,
 #pulseaudio,
 #tray,
 #custom-ddc-brightness {
   padding: 0 5px;
-  color: #ffffff;
+  /* color: #ffffff; */
   margin: 0;
 }
 
 #clock {
   margin: 0;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 #workspaces {
@@ -68,15 +71,6 @@ button {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right>widget:last-child>#workspaces {
   margin-right: 0;
-}
-
-/* #pulseaudio.source-muted { */
-/*   color: @red; */
-/* } */
-
-#idle_inhibitor.activated {
-  color: @red;
-  opacity: 1;
 }
 
 #tray {

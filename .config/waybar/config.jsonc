@@ -11,15 +11,10 @@
   ],
   "modules-right": [
     "custom/ddc-brightness",
-    "idle_inhibitor",
     "hyprland/language",
     "pulseaudio",
     "tray"
   ],
-  "idle_inhibitor": {
-    "format": "idle",
-    "tooltip": false
-  },
   "tray": {
     "spacing": 10
   },
@@ -42,8 +37,6 @@
     },
     "actions": {
       "on-click-right": "mode",
-      "on-scroll-up": "tz_up",
-      "on-scroll-down": "tz_down",
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     }
@@ -53,7 +46,8 @@
     "format-muted": "<span foreground=\"#F38BA8\">sound</span>  {format_source}",
     "format-source": "mic",
     "format-source-muted": "<span foreground=\"#F38BA8\">mic</span>",
-    "tooltip": false
+    "tooltip": false,
+    "on-click": "pavucontrol"
   },
   "hyprland/language": {
     "format-en": "en",
