@@ -1,0 +1,3 @@
+[General]
+TerminalApplication=kitty
+TerminalService=/usr/share/applications/kitty.desktop
