@@ -19,10 +19,6 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.config/scripts/toggle-audio.sh"))
 hl.bind(mainMod .. " + XF86AudioMute", hl.dsp.exec_cmd("~/.config/scripts/toggle-microphone.sh"))
 hl.bind(mainMod .. " + SHIFT + XF86AudioMute", hl.dsp.exec_cmd("~/.config/scripts/rofi/sinkchange.sh"))
 
--- opens currently copied url in mpv
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("~/.config/scripts/stream-launcher.sh"))
-
--- pkill previous instance to change brightness value once
 hl.bind(
   "XF86MonBrightnessUp",
   hl.dsp.exec_cmd("~/.config/scripts/ddc-brightness.sh up"),
