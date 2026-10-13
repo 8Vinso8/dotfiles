@@ -79,7 +79,7 @@
                                                     "AutoSwitch": true,
                                                     "DoubleClickAction": 3,
                                                     "ExpandOnSingleClick": false,
-                                                    "Grouping": 0,
+                                                    "Grouping": 3,
                                                     "ID": "cf9a0147ed624f7998383fe1769ca8b7",
                                                     "IconHeight": 36,
                                                     "IconWidth": 36,
@@ -122,12 +122,44 @@
                                         "TabPosition": 0,
                                         "Widgets": [
                                             {
-                                                "Playlist": {
-                                                    "Columns": "8:132|3|0:2|1|7:2",
-                                                    "HeaderState": "AAAAZXjaY2BgYGVgYAhjYGBSBdLFUHoCA0QcBBiBmAmImYGYBSRuv25H4OtWuR32N8BUkP2Wqofu60Sq4fydM0FgFkgjw38gAAD4+hpb",
-                                                    "ID": "7dcd4a219cc94d149bfdd2d21152312e",
-                                                    "Preset": 0,
-                                                    "SingleMode": false
+                                                "SplitterHorizontal": {
+                                                    "State": "AAAA/wAAAAEAAAACAAAGggAAAnMA/////wEAAAABAA==",
+                                                    "Widgets": [
+                                                        {
+                                                            "Playlist": {
+                                                                "Columns": "1|5|4",
+                                                                "HeaderState": "AAAARXjaY2BgYAYiBwYGxgUQDOIzMAExIwMEMNs/gDDsL6DSYAX/gQAAsjAIzA==",
+                                                                "ID": "7dcd4a219cc94d149bfdd2d21152312e",
+                                                                "Preset": 0,
+                                                                "SingleMode": false
+                                                            }
+                                                        },
+                                                        {
+                                                            "Lyrics": {
+                                                                "Alignment": 132,
+                                                                "BaseFont": "",
+                                                                "BottomMargin": 20,
+                                                                "CentreFirstSyncedLine": false,
+                                                                "CentreLastSyncedLine": true,
+                                                                "EdgeFadeMode": 0,
+                                                                "EdgeFadeSize": 10,
+                                                                "LeftMargin": 20,
+                                                                "LineFont": "",
+                                                                "LineSpacing": 5,
+                                                                "NoLyricsScript": "[Исполнитель: %artist%$crlf(2)][Альбом: %album%$crlf(2)]Название: %title%",
+                                                                "ProgressFill": 0,
+                                                                "RightMargin": 20,
+                                                                "ScrollDuration": 500,
+                                                                "ScrollMode": 1,
+                                                                "SeekOnClick": true,
+                                                                "ShowScrollbar": true,
+                                                                "TopMargin": 20,
+                                                                "UseCustomColours": false,
+                                                                "WordFont": "",
+                                                                "WordLineFont": ""
+                                                            }
+                                                        }
+                                                    ]
                                                 }
                                             }
                                         ]
@@ -146,6 +178,6 @@
     ],
     "WindowSize": {
         "Height": 1422,
-        "Width": 1708
+        "Width": 2560
     }
 }

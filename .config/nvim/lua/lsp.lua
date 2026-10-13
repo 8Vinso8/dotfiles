@@ -1,3 +1,6 @@
+local ts = require("nvim-treesitter")
+ts.install({ "lua", "bash", "json", "toml", "yaml", "vim", "markdown" })
+
 vim.diagnostic.config({
   virtual_text = {
     prefix = "●",

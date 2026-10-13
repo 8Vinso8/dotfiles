@@ -2,7 +2,7 @@
 
 # Replace these with your actual wpctl IDs or pactl sink names
 HEADPHONES_ID=60
-SPEAKERS_ID=59
+SPEAKERS_ID=46
 
 # Menu options
 HEADPHONES="🎧 Headphones"

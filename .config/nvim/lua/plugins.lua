@@ -15,6 +15,8 @@ vim.pack.add({
   "https://github.com/neovim/nvim-lspconfig",
 
   "https://github.com/windwp/nvim-autopairs",
+
+  "https://github.com/nvim-treesitter/nvim-treesitter"
 })
 
 require("catppuccin").setup({ flavour = "mocha", })
