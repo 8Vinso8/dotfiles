@@ -88,12 +88,11 @@ hl.window_rule({
 -- Game specific fixes
 
 -- BeamNG launcher
--- tile+pseudo fix it opening as a single line,
 -- no_initial_focus fixes cursor not working on initial focus
 hl.window_rule({
-  name = "beamng-launcher-pseudotile",
+  name = "beamng-launcher",
   match = {
-    title = "^BeamNG v\\d+\\.\\d+.\\d+.\\d+ Программа запуска$",
+    title = "^((BeamNG v\\d+\\.\\d+.\\d+.\\d+ Программа запуска)|(RSF Launcher.*))$",
   },
   tag = "-game",
 })
