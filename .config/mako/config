@@ -1,11 +1,30 @@
-default-timeout=3000
-border-radius=5
-anchor=top-center
+# Timeout
+default-timeout=2500
+ignore-timeout=1
 
-background-color=#000000
-text-color=#ffffff
+# Position and stacking
+anchor=bottom-right
+max-visible=2
+sort=-time
+
+# Appearance
+width=320
+height=100
+margin=6
+padding=10
+border-size=1
+border-radius=8
+
+background-color=#11111b
+text-color=#f5f5f5
 border-color=#cba6f7
 progress-color=over #313244
 
-[urgency=high]
+# Critical notifications
+[urgency=critical]
 border-color=#fab387
+default-timeout=0
+
+# Hide Boxflat popups
+[desktop-entry=io.github.lawstorant.boxflat]
+invisible=1

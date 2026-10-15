@@ -34,6 +34,11 @@ hl.window_rule({
   no_focus = true,
 })
 
+hl.layer_rule({
+  match = { namespace = "notifications" },
+  animation = "slide",
+})
+
 hl.window_rule({
   name = "scrolling-full-width",
   match = {
