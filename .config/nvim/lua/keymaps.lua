@@ -1,57 +1,57 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
+-- Telescope keymaps
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help tags' })
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Diagnostics' })
+
+-- LSP keymaps on attach
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf }
 
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "gd", builtin.lsp_definitions, vim.tbl_extend("force", opts, { desc = "LSP definitions" }))
+    vim.keymap.set("n", "gr", builtin.lsp_references, vim.tbl_extend("force", opts, { desc = "LSP references" }))
+    vim.keymap.set("n", "gI", builtin.lsp_implementations, vim.tbl_extend("force", opts, { desc = "LSP implementations" }))
+    vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, vim.tbl_extend("force", opts, { desc = "LSP document symbols" }))
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "rounded" }) end, vim.tbl_extend("force", opts, { desc = "Hover doc" }))
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
+    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code actions" }))
   end,
 })
 
--- Use Tab to cycle forward in completion menu, Shift-Tab to cycle backward
-vim.keymap.set("i", "<Tab>", function()
-  return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>"
-end, { expr = true })
+-- Diagnostic keymaps
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show line diagnostic" })
+vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Previous diagnostic" })
+vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next diagnostic" })
 
-vim.keymap.set("i", "<S-Tab>", function()
-  return vim.fn.pumvisible() == 1 and "<C-p>" or "<S-Tab>"
-end, { expr = true })
+-- Format code
+vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "Format buffer" })
 
--- Confirm selection with Enter
-vim.keymap.set("i", "<CR>", function()
-  if vim.fn.pumvisible() == 1 then
-    -- Check if a menu item is actually selected (complete_info().selected ~= -1)
-    if vim.fn.complete_info({ "selected" }).selected ~= -1 then
-      return "<C-y>"     -- Accept completion
-    else
-      return "<C-e><CR>" -- Close completion menu, then insert newline
-    end
-  end
-  return "<CR>"
-end, { expr = true, replace_keycodes = true })
-
-vim.keymap.set("i", "<Down>", function()
-  if vim.fn.pumvisible() == 1 then
-    return "<C-e><Down>" -- Close menu, move cursor down
-  end
-  return "<Down>"
-end, { expr = true, replace_keycodes = true })
-
-vim.keymap.set("i", "<Up>", function()
-  if vim.fn.pumvisible() == 1 then
-    return "<C-e><Up>" -- Close menu, move cursor up
-  end
-  return "<Up>"
-end, { expr = true, replace_keycodes = true })
-
-vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
-
+-- File manager (Oil)
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>-", "<CMD>Oil --float<CR>", { desc = "Open Oil in floating window" })
+
+-- Search and navigation improvements
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result centered" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result centered" })
+
+-- Window navigation without <C-w>
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus window left" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Focus window below" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Focus window above" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Focus window right" })
+
+-- Move selected lines in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move lines down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up" })
+
+-- Paste in visual mode without overwriting register
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without overwriting register" })
+
+

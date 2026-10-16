@@ -2,7 +2,7 @@
 
 wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 if wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -qF "[MUTED]"; then
-  notify-send -h string:x-canonical-private-synchronous:osd Audio "<span color='red'>MUTED</span>"
+  notify-send -h string:x-canonical-private-synchronous:osd Audio "<span color='red'>Muted</span>"
 else
-  notify-send -h string:x-canonical-private-synchronous:osd Audio "<span color='green'>UNMUTED</span>"
+  notify-send -h string:x-canonical-private-synchronous:osd Audio "<span color='green'>Unmuted</span>"
 fi

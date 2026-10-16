@@ -36,7 +36,7 @@ hl.window_rule({
 
 hl.layer_rule({
   match = { namespace = "notifications" },
-  animation = "slide",
+  animation = "slide bottom",
 })
 
 hl.window_rule({
@@ -92,14 +92,22 @@ hl.window_rule({
 })
 -- Game specific fixes
 
--- BeamNG launcher
--- no_initial_focus fixes cursor not working on initial focus
+-- launchers
 hl.window_rule({
-  name = "beamng-launcher",
+  name = "launcher",
   match = {
-    title = "^((BeamNG v\\d+\\.\\d+.\\d+.\\d+ Программа запуска)|(RSF Launcher.*))$",
+    title = "^((BeamNG v\\d+\\.\\d+.\\d+.\\d+ Программа запуска)|(Content Manager.*))$",
   },
   tag = "-game",
+})
+hl.window_rule({
+  name = "ac-empty-title-popup",
+  match = {
+    class = "^steam_app_244210$",
+    title = "^$",
+  },
+  tag = "-game",
+  fullscreen_state = "0 0",
 })
 -- 3058630 - ac evo
 hl.window_rule({
