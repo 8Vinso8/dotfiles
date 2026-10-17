@@ -47,6 +47,51 @@ hl.window_rule({
   scrolling_width = 1.0,
 })
 
+hl.window_rule({
+  name = "picture-in-picture",
+  match = {
+    title = "^(Picture-in-Picture|Картинка в картинке)$",
+  },
+  float = true,
+  pin = true,
+  keep_aspect_ratio = true,
+  no_initial_focus = true,
+  size = { "monitor_w*0.25", "monitor_h*0.25" },
+  move = { "monitor_w-window_w-20", "monitor_h-window_h-20" },
+})
+
+hl.window_rule({
+  name = "floating-dialogs",
+  match = {
+    class = "^(pavucontrol|org\\.pulseaudio\\.pavucontrol|qt6ct|nwg-look|kvantummanager)$",
+  },
+  float = true,
+  center = true,
+  size = { "monitor_w * 0.45", "monitor_h * 0.55" },
+})
+
+hl.window_rule({
+  name = "steam-dialogs",
+  match = {
+    class = "^steam$",
+    title = "^(Friends List|Settings|Список друзей|Настройки)$",
+  },
+  float = true,
+})
+
+hl.window_rule({
+  name = "steam-updater",
+  match = {
+    class = "^$",
+    title = "^(Steam.*)$",
+    xwayland = true,
+  },
+  workspace = "special:silent silent",
+  no_initial_focus = true,
+  no_anim = true,
+})
+
+
 hl.workspace_rule({
   workspace = "1",
   default = true,
@@ -65,6 +110,43 @@ hl.window_rule({
   no_vrr = true,
 })
 
+local launcher_games = {
+  ["244210"] = "^Assetto Corsa$",     -- Assetto Corsa (Content Manager)
+  ["284160"] = "^BeamNG\\.drive.*$",  -- BeamNG.drive
+}
+
+local launcher_ids = {}
+for id, _ in pairs(launcher_games) do
+  table.insert(launcher_ids, id)
+end
+
+hl.window_rule({
+  name = "proton-game-tag-all",
+  match = {
+    class = "^steam_app_.*$",
+  },
+  tag = "+game",
+})
+
+hl.window_rule({
+  name = "proton-strip-launcher-tag",
+  match = {
+    class = "^steam_app_(" .. table.concat(launcher_ids, "|") .. ")$",
+  },
+  tag = "-game",
+})
+
+for id, title_regex in pairs(launcher_games) do
+  hl.window_rule({
+    name = "proton-restore-game-" .. id,
+    match = {
+      class = "^steam_app_" .. id .. "$",
+      title = title_regex,
+    },
+    tag = "+game",
+  })
+end
+
 hl.window_rule({
   name = "fullscreen-games",
   match = {
@@ -82,38 +164,11 @@ hl.window_rule({
   idle_inhibit = "always",
 })
 
--- Games
-hl.window_rule({
-  name = "proton-game-tag",
-  match = {
-    class = "^steam_app_.*$",
-  },
-  tag = "+game",
-})
--- Game specific fixes
-
--- launchers
-hl.window_rule({
-  name = "launcher",
-  match = {
-    title = "^((BeamNG v\\d+\\.\\d+.\\d+.\\d+ Программа запуска)|(Content Manager.*))$",
-  },
-  tag = "-game",
-})
-hl.window_rule({
-  name = "ac-empty-title-popup",
-  match = {
-    class = "^steam_app_244210$",
-    title = "^$",
-  },
-  tag = "-game",
-  fullscreen_state = "0 0",
-})
 -- 3058630 - ac evo
 hl.window_rule({
   name = "vrr-except",
   match = {
-    class = "^steam_app_(?:3058630)$",
+    class = "^steam_app_3058630$",
   },
   no_vrr = true,
 })

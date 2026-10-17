@@ -5,8 +5,7 @@
 @define-color red #f38ba8;
 
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Noto;
+  font-family: "JetBrainsMono Nerd Font", Noto, sans-serif;
   font-weight: bold;
   font-size: 13px;
 

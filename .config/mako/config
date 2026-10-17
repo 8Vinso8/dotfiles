@@ -1,13 +1,22 @@
-# Timeout
+# Шрифт
+font=JetBrainsMono Nerd Font 10
+
+# Формат и иконки
+format=<b>%s</b>\n%b
+icons=1
+max-icon-size=48
+icon-location=left
+
+# Таймауты
 default-timeout=2500
 ignore-timeout=1
 
-# Position and stacking
+# Позиция и группировка
 anchor=bottom-right
 max-visible=2
 sort=-time
 
-# Appearance
+# Внешний вид
 width=320
 height=100
 margin=6
@@ -15,16 +24,22 @@ padding=10
 border-size=1
 border-radius=8
 
+# Цвета (Catppuccin Mocha)
 background-color=#11111b
-text-color=#f5f5f5
+text-color=#cdd6f4
 border-color=#cba6f7
 progress-color=over #313244
 
-# Critical notifications
+# Действия мыши
+on-button-left=dismiss
+on-button-right=dismiss-all
+on-button-middle=none
+
+# Критические уведомления
 [urgency=critical]
-border-color=#fab387
+border-color=#f38ba8
 default-timeout=0
 
-# Hide Boxflat popups
+# Скрытие уведомлений от Boxflat
 [desktop-entry=io.github.lawstorant.boxflat]
 invisible=1

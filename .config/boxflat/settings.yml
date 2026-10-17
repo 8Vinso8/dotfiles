@@ -1,0 +1,11 @@
+autostart-hidden: 1
+background: 1
+background-notified: 1
+default-preset-on-startup: 1
+moza-detection-fix-enabled: 0
+rules-version: 2
+window_state:
+  fullscreen: false
+  height: 850
+  maximized: true
+  width: 0

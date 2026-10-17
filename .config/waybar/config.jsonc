@@ -28,11 +28,11 @@
       "weeks-pos": "right",
       "on-scroll": 1,
       "format": {
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+        "months": "<span color='#cba6f7'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks": "<span color='#94e2d5'><b>W{}</b></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
       }
     },
     "actions": {
@@ -47,7 +47,9 @@
     "format-source": "mic",
     "format-source-muted": "<span foreground=\"#F38BA8\">mic</span>",
     "tooltip": false,
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-click-right": "~/.config/scripts/toggle-audio.sh",
+    "on-click-middle": "~/.config/scripts/toggle-microphone.sh"
   },
   "hyprland/language": {
     "format-en": "en",
@@ -55,7 +57,9 @@
   },
   "custom/ddc-brightness": {
     "exec": "cat ~/.config/last_brightness",
-    "format": "{}",
-    "signal": 8
+    "format": "{}%",
+    "signal": 8,
+    "on-scroll-up": "~/.config/scripts/ddc-brightness.sh up",
+    "on-scroll-down": "~/.config/scripts/ddc-brightness.sh down"
   }
 }

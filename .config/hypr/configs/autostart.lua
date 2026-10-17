@@ -1,4 +1,5 @@
 hl.on("hyprland.start", function()
+  hl.exec_cmd("/usr/bin/hyprland-per-window-layout")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("~/.config/scripts/ddc-brightness.sh restore")
   hl.exec_cmd("wl-paste --type text --watch cliphist store")

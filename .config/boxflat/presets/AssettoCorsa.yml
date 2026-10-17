@@ -1,0 +1,68 @@
+BoxflatPresetVersion: '1'
+base:
+  damper: 150
+  equalizer1: 100
+  equalizer2: 100
+  equalizer3: 70
+  equalizer4: 40
+  equalizer5: 30
+  equalizer6: 0
+  ffb-curve-x1: 20
+  ffb-curve-y1: 20
+  ffb-curve-y2: 40
+  ffb-curve-y3: 60
+  ffb-curve-y4: 80
+  ffb-curve-y5: 100
+  ffb-reverse: 0
+  ffb-strength: 1000
+  friction: 50
+  inertia: 1200
+  limit: 450
+  max-angle: 450
+  natural-inertia: 1100
+  protection: 0
+  protection-mode: 1
+  road-sensitivity: 30
+  soft-limit-retain: 1
+  soft-limit-stiffness: 278
+  soft-limit-strength: 78
+  speed: 1000
+  speed-damping: 0
+  speed-damping-point: 0
+  spring: 0
+  torque: 100
+is-default: false
+linked-process: AssettoCorsa.exe
+main:
+  set-damper-gain: 128
+  set-friction-gain: 128
+  set-inertia-gain: 128
+  set-interpolation: 0
+  set-spring-gain: 255
+  set-work-mode: 0
+pedals:
+  brake-angle-ratio: 50.0
+  brake-dir: 0
+  brake-max: 100
+  brake-min: 0
+  brake-y1: 20.0
+  brake-y2: 40.0
+  brake-y3: 60.0
+  brake-y4: 80.0
+  brake-y5: 100.0
+  clutch-dir: 0
+  clutch-max: 100
+  clutch-min: 0
+  clutch-y1: 20.0
+  clutch-y2: 40.0
+  clutch-y3: 60.0
+  clutch-y4: 80.0
+  clutch-y5: 100.0
+  throttle-dir: 0
+  throttle-max: 100
+  throttle-min: 0
+  throttle-y1: 20.0
+  throttle-y2: 40.0
+  throttle-y3: 60.0
+  throttle-y4: 80.0
+  throttle-y5: 100.0

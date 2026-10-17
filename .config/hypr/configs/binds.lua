@@ -17,7 +17,7 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("playerctl -p fooyin volume 0.05
 -- audio controls
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.config/scripts/toggle-audio.sh"))
 hl.bind(mainMod .. " + XF86AudioMute", hl.dsp.exec_cmd("~/.config/scripts/toggle-microphone.sh"))
-hl.bind(mainMod .. " + SHIFT + XF86AudioMute", hl.dsp.exec_cmd("~/.config/scripts/rofi/sinkchange.sh"))
+hl.bind(mainMod .. " + SHIFT + XF86AudioMute", hl.dsp.exec_cmd("~/.config/scripts/sinkchange.sh"))
 
 hl.bind(
   "XF86MonBrightnessUp",
@@ -79,7 +79,9 @@ hl.bind(mainMod .. " + F", layout_bind({
 }))
 
 -- Scrolling: cycle trough column sizes SUPER + X
-hl.bind(mainMod .. " + X", hl.dsp.layout("colresize +conf"))
+hl.bind(mainMod .. " + X", layout_bind({
+  scrolling = hl.dsp.layout("colresize +conf"),
+}))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })

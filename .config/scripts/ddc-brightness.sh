@@ -96,7 +96,8 @@ mv -f "$REQUEST_FILE.$$" "$REQUEST_FILE"
 
 flock -u 9
 
-notify-send "Brightness" "$NEW" \
+notify-send "Brightness" "${NEW}%" \
+    -h int:value:"$NEW" \
     -h string:x-canonical-private-synchronous:osd || true
 
 pkill -RTMIN+8 waybar || true
