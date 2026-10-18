@@ -48,7 +48,8 @@
   "custom/cava": {
     "exec": "~/.config/scripts/cava-waybar.sh",
     "format": "{}",
-    "tooltip": false
+    "tooltip": false,
+    "restart-interval": 0.5
   },
   "hyprland/workspaces": {
     "format": "{name}",
