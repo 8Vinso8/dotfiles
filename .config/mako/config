@@ -40,6 +40,3 @@ on-button-middle=none
 border-color=#f38ba8
 default-timeout=0
 
-# Скрытие уведомлений от Boxflat
-[desktop-entry=io.github.lawstorant.boxflat]
-invisible=1
