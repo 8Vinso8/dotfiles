@@ -14,12 +14,24 @@ readonly APPLY_LOCK="$STATE_DIR/apply.lock"
 readonly REQUEST_FILE="$STATE_DIR/latest-request"
 
 case "${1-}" in
-    up|down|restore) ;;
+    up|down|restore|status) ;;
     *)
-        printf 'Usage: %s {up|down|restore}\n' "$0" >&2
+        printf 'Usage: %s {up|down|restore|status}\n' "$0" >&2
         exit 2
         ;;
 esac
+
+if [[ "${1-}" == status ]]; then
+    val=""
+    if [[ -r "$CACHE_FILE" ]]; then
+        IFS= read -r val < "$CACHE_FILE" || true
+    fi
+    if [[ ! "$val" =~ ^[0-9]{1,3}$ ]]; then
+        val=100
+    fi
+    printf '{"percentage": %d}\n' "$val"
+    exit 0
+fi
 
 mkdir -p "$(dirname "$CACHE_FILE")" "$STATE_DIR"
 
