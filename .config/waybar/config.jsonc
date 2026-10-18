@@ -14,13 +14,47 @@
     "clock"
   ],
   "modules-right": [
-    "custom/ddc-brightness",
-    "hyprland/language",
-    "pulseaudio",
+    "mpris",
+    "custom/cava",
+    "group/system",
     "tray"
   ],
+  "mpris": {
+    "player": "fooyin",
+    "format": "<span color='#cba6f7'>󰎈</span> {dynamic}",
+    "format-paused": "<span color='#a6adc8'>󰏤 <i>{dynamic}</i></span>",
+    "format-stopped": "",
+    "dynamic-order": ["title", "artist"],
+    "max-length": 60
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "idle_inhibitor",
+      "custom/ddc-brightness",
+      "hyprland/language",
+      "pulseaudio"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰒳",
+      "deactivated": "󰒲"
+    },
+    "tooltip-format-activated": "Сон заблокирован",
+    "tooltip-format-deactivated": "Сон разрешён"
+  },
+  "custom/cava": {
+    "exec": "~/.config/scripts/cava-waybar.sh",
+    "format": "{}",
+    "tooltip": false
+  },
   "hyprland/workspaces": {
-    "format": "{name}"
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 5
+    }
   },
   "hyprland/window": {
     "format": "{}",
