@@ -8,8 +8,8 @@ hl.animation({ leaf = "windowsIn",   enabled = true, speed = 1.49, bezier = "qui
 hl.animation({ leaf = "windowsOut",  enabled = true, speed = 1,    bezier = "quick", style = "popin 100%"})
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 2.5,  bezier = "quick" })
 
-hl.animation({ leaf = "fade",        enabled = true, speed = 1.5, bezier = "quick" })
-hl.animation({ leaf = "fadeOut",     enabled = true, speed = 1.0, bezier = "quick" })
+hl.animation({ leaf = "fade",        enabled = true, speed = 2.5, bezier = "quick" })
+hl.animation({ leaf = "fadeOut",     enabled = true, speed = 2.5, bezier = "quick" })
 
 hl.animation({ leaf = "workspaces",       enabled = true, speed = 2.2, bezier = "quick",        style = "slidevert" })
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 1.3, bezier = "almostLinear", style = "fade" })
@@ -17,3 +17,5 @@ hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 1.3, bezier = 
 hl.animation({ leaf = "layers",    enabled = true, speed = 2.5, bezier = "quick", style = "fade" })
 hl.animation({ leaf = "layersIn",  enabled = true, speed = 2.5, bezier = "quick", style = "fade" })
 hl.animation({ leaf = "layersOut", enabled = true, speed = 2.5, bezier = "quick", style = "fade" })
+hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 2.5, bezier = "quick" })
+hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 2.5, bezier = "quick" })
