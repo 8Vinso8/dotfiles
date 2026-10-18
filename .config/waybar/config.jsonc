@@ -62,7 +62,11 @@
     "max-length": 40
   },
   "tray": {
-    "spacing": 8
+    "spacing": 8,
+    "icons": {
+      "io.github.lawstorant.boxflat": "/home/vinso/.config/icons/boxflat/steering-wheel.png",
+      "Boxflat": "/home/vinso/.config/icons/boxflat/steering-wheel.png"
+    }
   },
   "clock": {
     "format": "<span color='#cba6f7'>󰥔</span> {0:L%H:%M}  <span color='#cba6f7'>󰸗</span> {0:L%a %d.%m.%Y}",
