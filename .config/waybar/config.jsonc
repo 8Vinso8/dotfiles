@@ -15,7 +15,6 @@
   ],
   "modules-right": [
     "mpris",
-    "custom/cava",
     "group/system",
     "tray"
   ],
@@ -44,12 +43,7 @@
     },
     "tooltip": false
   },
-  "custom/cava": {
-    "exec": "~/.config/scripts/cava-waybar.sh",
-    "format": "{}",
-    "tooltip": false,
-    "restart-interval": 0.5
-  },
+
   "hyprland/workspaces": {
     "format": "{name}",
     "tooltip": false,
