@@ -42,8 +42,7 @@
       "activated": "󰒳",
       "deactivated": "󰒲"
     },
-    "tooltip-format-activated": "Сон заблокирован",
-    "tooltip-format-deactivated": "Сон разрешён"
+    "tooltip": false
   },
   "custom/cava": {
     "exec": "~/.config/scripts/cava-waybar.sh",
@@ -53,6 +52,7 @@
   },
   "hyprland/workspaces": {
     "format": "{name}",
+    "tooltip": false,
     "persistent-workspaces": {
       "*": 5
     }
@@ -104,7 +104,8 @@
   },
   "hyprland/language": {
     "format-en": "<span color='#cba6f7'>󰌌</span> EN",
-    "format-ru": "<span color='#cba6f7'>󰌌</span> RU"
+    "format-ru": "<span color='#cba6f7'>󰌌</span> RU",
+    "tooltip": false
   },
   "custom/ddc-brightness": {
     "exec": "~/.config/scripts/ddc-brightness.sh status",
@@ -113,6 +114,7 @@
     "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
     "signal": 8,
     "on-scroll-up": "~/.config/scripts/ddc-brightness.sh up",
-    "on-scroll-down": "~/.config/scripts/ddc-brightness.sh down"
+    "on-scroll-down": "~/.config/scripts/ddc-brightness.sh down",
+    "tooltip": false
   }
 }
