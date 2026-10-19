@@ -106,17 +106,6 @@ window#waybar.empty #window {
   border: none;
 }
 
-/* Островок CAVA */
-#custom-cava {
-  background-color: @base;
-  border: 1px solid rgba(203, 166, 247, 0.2);
-  border-radius: 8px;
-  padding: 0 8px;
-  margin-right: 8px;
-  color: @mauve;
-  letter-spacing: 1px;
-}
-
 /* Островок системы */
 #system {
   background-color: @base;
