@@ -9,3 +9,4 @@ hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 --hl.env("PROTON_ENABLE_WAYLAND", 1)
+hl.env("MESA_SHADER_CACHE_MAX_SIZE", "12G")
