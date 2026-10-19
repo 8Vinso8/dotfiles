@@ -148,7 +148,9 @@ hl.window_rule({
   idle_inhibit = "always",
 })
 
--- 3058630 - ac evo
+-- 3058630 - Assetto Corsa EVO
+-- no_vrr = true: disables Adaptive Sync to prevent VA/IPS gamma/brightness flicker on 165Hz during frametime dips / loading.
+-- immediate = true: enables tearing/asynchronous page flips (requires allow_tearing = true in config.lua) to minimize input latency.
 hl.window_rule({
   name = "vrr-except",
   match = {
