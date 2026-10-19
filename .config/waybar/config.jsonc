@@ -24,7 +24,12 @@
     "format-paused": "<span color='#a6adc8'>󰏤 <i>{dynamic}</i></span>",
     "format-stopped": "",
     "dynamic-order": ["title", "artist"],
-    "max-length": 60
+    "max-length": 60,
+    "on-click": "play-pause",
+    "on-click-right": "fooyin & hyprctl dispatch \"hl.dsp.focus({ window = 'class:org.fooyin.fooyin' })\"",
+    "on-scroll-up": "playerctl -p fooyin next",
+    "on-scroll-down": "playerctl -p fooyin previous",
+    "tooltip-format": "󰎈 {title}\n󰠃 {artist}\n󰀥 {album}\n󰥔 {position} / {length}"
   },
   "group/system": {
     "orientation": "horizontal",
