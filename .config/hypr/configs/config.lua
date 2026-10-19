@@ -9,7 +9,7 @@ hl.monitor({ output = "" }) -- Fallback rule
 
 hl.config({
   general = {
-    allow_tearing = false,
+    allow_tearing = true,
     border_size   = 2,
     gaps_in       = 4,
     gaps_out      = 8,

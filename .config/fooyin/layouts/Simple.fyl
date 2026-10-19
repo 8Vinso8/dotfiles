@@ -128,7 +128,7 @@
                                                         {
                                                             "Playlist": {
                                                                 "Columns": "1|5|4",
-                                                                "HeaderState": "AAAARXjaY2BgYAYiBwYGxgUQDOIzMAExIwMEMNs/gDDsL6DSYAX/gQAAsjAIzA==",
+                                                                "HeaderState": "AAAARXjaY2BgYGZgYAJiRkYIBvEZmIAYxAYBZvsHEIb9BVQarOA/EAAAXZsHUA==",
                                                                 "ID": "7dcd4a219cc94d149bfdd2d21152312e",
                                                                 "Preset": 0,
                                                                 "SingleMode": false
@@ -177,7 +177,7 @@
         }
     ],
     "WindowSize": {
-        "Height": 1422,
-        "Width": 2560
+        "Height": 1388,
+        "Width": 1689
     }
 }

@@ -155,4 +155,5 @@ hl.window_rule({
     class = "^steam_app_3058630$",
   },
   no_vrr = true,
+  immediate = true,
 })
