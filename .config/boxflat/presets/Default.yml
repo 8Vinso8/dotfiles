@@ -1,12 +1,12 @@
 BoxflatPresetVersion: '1'
 base:
-  damper: 200
+  damper: 100
   equalizer1: 100
   equalizer2: 100
   equalizer3: 100
   equalizer4: 100
   equalizer5: 100
-  equalizer6: 0
+  equalizer6: 100
   ffb-curve-x1: 20
   ffb-curve-y1: 20
   ffb-curve-y2: 40
@@ -15,14 +15,14 @@ base:
   ffb-curve-y5: 100
   ffb-reverse: 0
   ffb-strength: 1000
-  friction: 0
-  inertia: 2000
-  limit: 750
-  max-angle: 750
+  friction: 100
+  inertia: 1000
+  limit: 720
+  max-angle: 720
   natural-inertia: 1100
   protection: 0
   protection-mode: 1
-  road-sensitivity: 46
+  road-sensitivity: 50
   soft-limit-retain: 0
   soft-limit-stiffness: 278
   soft-limit-strength: 78
